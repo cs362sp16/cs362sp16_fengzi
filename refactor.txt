@@ -1,0 +1,7 @@
+Zixuan Feng
+CS 362/Assignment1 text
+Explanation assignment 1
+
+
+I just changed these five functions, adventurer, council remodel, smithy, and village. I did not change the inside of the function, I do not think that will effect the function, so I just deleted the original case, and move to the function at last. And in the original spot, I call the five functions. That is the easier way to let me changed the functions. And I declare the functions in the header file as while. 
+And then, all the functions are working good right now. 
