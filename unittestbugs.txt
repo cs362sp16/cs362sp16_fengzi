@@ -1,0 +1,19 @@
+CS 362
+Zixuan Feng
+Assignement2
+
+1. code
+2. code
+3. During my unittest, I test four functions, but I did not find any bugs on my unittest,
+   I test update coins, draw cards, trash cards and is the game over, but I did not find any bugs.
+   but when i test the card test, I found two bugs, during my village and smithy function, because I changed
+   some numbers and made some bugs for my village and smithy function, so it just showed up.
+   
+4. 6. 
+  I just use gcov to test all of my test, includind 4 card test, and 4 unit test, , and I just find the line executed is 39%, 
+  I justfound in some of my card test, especially in 
+   the smithy and village, some loop even did not be executed. I just think this is a great idea and tool 
+   to let me test all the code I write. Honesty, I made some bugs original for my card test file, I use the gcov
+   to find the bugs. This is a great tool for me. Since i just test 8 tests, I think 39% executed is great.
+   I just found the whose turn function need execute more, because most of them did not execute. I think I need to 
+   test it in the future, because this is very important for all program.
