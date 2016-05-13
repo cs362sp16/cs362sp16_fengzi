@@ -1,0 +1,13 @@
+CS 352 Assignment
+Zixuan Feng
+5/11/2016
+
+In this assignment, I wrote three random test for three different fucntions, adventurer, village and smithy. I use the random test
+and I set up about 100 times to test, and it only take about 1 second to finish. And the coverage is 100% as i checked with gcov,
+especially for the adventurer, I just read every line code, and I think my test just cover everything. Due to the assignment1, I add a bug
+for the village test, so i used my random test, and it get the result find out the bugs, which indicate my test is great. As for the difference between the 
+unit test and random test, we all know that unit test is one kind of small test, it should test some small data functions, if we use
+it as some complex and large data functions, it is too small, we could use the random test, it will cover everything and it will test
+all the function including every loop in the functions, and use random number and size, this is very important. Sometimes, when we use
+the unit test, it will not test all like random test. We know due to the coverage, it is better to use random test, and it will have high fault
+detection capabilities, because this is very important. The coverage is the most important thing for detection capabilities.
