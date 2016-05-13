@@ -43,7 +43,6 @@ int main(){
 
 		cardEffect(smithy, 0, 0, 0, &state,0,0);
 
-		printf("%d, %d\n", handCount, state.handCount[num]);
 
 		my_assert(handCount+2, state.handCount[num], "Handcount.");
 

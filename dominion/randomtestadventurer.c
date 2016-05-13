@@ -2,7 +2,7 @@
 CS 362 Assignment 3 
 Zixuan Feng
 10/5/2016
-adventurer test
+Village test
 ***********************************/
 #include "dominion.h"
 #include "rngs.h"
@@ -11,7 +11,7 @@ adventurer test
 #include <stdlib.h>
 #include "dominion_helpers.h"
 #define NUM_TESTS 100
-//This is going to judge the fault
+
 void my_assert(int a, int b, char *c)
 {
 	if(a != b)
@@ -19,7 +19,6 @@ void my_assert(int a, int b, char *c)
 		printf("Random test fail %s\n", c);
 	}
 }
-//before main, I just set up everything, and initial all the varibles
 
 int main(){
 	int x[10] = {adventurer, gardens, embargo, sea_hag, tribute, smithy,
@@ -34,17 +33,18 @@ int main(){
 	printf("*********** adventurer test **********\n");
 
 	for (y = 0; y < NUM_TESTS; y++) {
-		players=4;//set up players
+		players=4;
 		randSeed=rand();
-		initializeGame(players, x, randSeed, &state); //initial the game state
+		initializeGame(players, x, randSeed, &state);
 
-		state.deckCount[num] = rand() % MAX_DECK; 
+		state.deckCount[num] = rand() % MAX_DECK; //Pick random deck size out of MAX DECK size
 		state.discardCount[num] = rand() % MAX_DECK;
 		state.handCount[num] = rand() % MAX_HAND;
-		//copy the varibles
+
 		handCount = state.handCount[num];
 		deckCount = state.deckCount[num];
-		//some chance the deck count will be 0
+
+
 		if (randSeed % 3 == 0) {
 
 			state.deckCount[num] = 0;
@@ -61,8 +61,10 @@ int main(){
             state.hand[num][z] = rand() % treasure_map;
         }
 
-        	cardEffect(adventurer, 0, 0, 0, &state, 0, 0); //run the adventurer card
-        	handCount=handCount+2;
+        cardEffect(adventurer, 0, 0, 0, &state,0,0);
+        	handCount += 2;
+        				printf("result shown below:");
+        				printf("%d, %d\n", handCount, state.handCount[num]);
 
         			my_assert(handCount, state.handCount[num], "handCount");
         		}

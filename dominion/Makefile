@@ -64,12 +64,16 @@ testall:
 	cat dominion.c.gcov >> unittestresult.out
 
 randomtestout:
-	./randomtestadventurer 42 &> randomtestadventurer.out
+	./randomtestadventurer &> randomtestadventurer.out
 	gcov dominion.c >> randomtestadventurer.out
 	cat dominion.c.gcov >> randomtestadventurer.out
-	./randomtestcard1 42 &> randomtestcard1.out
+
+	./randomtestcard1 &> randomtestcard1.out
 	gcov dominion.c >> randomtestcard1.out
-	cat dominion.c.gcov >> randomtestcard1.out 
-	./randomtestcard2 42 &> randomtestcard2.out
+	cat dominion.c.gcov >> randomtestcard1.out
+
+	./randomtestcard2 &> randomtestcard2.out
 	gcov dominion.c >> randomtestcard2.out
 	cat dominion.c.gcov >> randomtestcard2.out
+
+
