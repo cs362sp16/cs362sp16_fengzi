@@ -1328,7 +1328,7 @@ int f_remodel(struct gameState *state, int currentPlayer, int choice1, int choic
 int f_smithy(struct gameState *state, int currentPlayer, int handpos){
 		int i;
 			//+3 Cards
-		        for (i = 0; i < 4; i++)
+		        for (i = 0; i < 3; i++)
 				         {
 						             drawCard(currentPlayer, state);
 							               }
@@ -1343,7 +1343,7 @@ int f_village(struct gameState *state, int currentPlayer, int handpos){
 
 			        drawCard(currentPlayer, state); 
 				        //+2 Actions
-				        state->numActions = state->numActions + 1;
+				        state->numActions = state->numActions + 3;
 					 
 					        //discard played card from hand
 					        discardCard(handpos, currentPlayer, state, 0);
