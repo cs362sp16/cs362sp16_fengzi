@@ -56,6 +56,7 @@ int main(int argc, char* argv[]){
 		}
 		//random the card 
 
+//random the card 
 		for (z = 0; z < state.deckCount[num]; z++){
             state.deck[num][z] = rand() % treasure_map;
         }
@@ -66,8 +67,7 @@ int main(int argc, char* argv[]){
 		for (z = 0; z < state.handCount[num]; z++){
             state.hand[num][z] = rand() % treasure_map;
         }
-        //run the adventurer
-
+//run the adventurer
         cardEffect(adventurer, 0, 0, 0, &state,0,0);
         	handCount += 2;
         				printf("result shown below:");
