@@ -20,7 +20,7 @@ void my_assert(int a, int b, char *c)
 	}
 }
 
-int main(){
+int main(int argc, char* argv[]){
 	int x[10] = {adventurer, gardens, embargo, sea_hag, tribute, smithy,
 		village, minion, mine, cutpurse, 
      };
@@ -29,26 +29,32 @@ int main(){
 
 	struct gameState state;
 	srand(time(NULL));
+		if(argv[1]!=NULL)
+		randSeed = atoi(argv[1]);
+	else
+		randSeed = rand()%10 + 1;
 
 	printf("*********** adventurer test **********\n");
+
 
 	for (y = 0; y < NUM_TESTS; y++) {
 		players=4;
 		randSeed=rand();
-		initializeGame(players, x, randSeed, &state);
+		initializeGame(players, x, randSeed, &state); //initiallize the game
 
 		state.deckCount[num] = rand() % MAX_DECK; //Pick random deck size out of MAX DECK size
-		state.discardCount[num] = rand() % MAX_DECK;
-		state.handCount[num] = rand() % MAX_HAND;
+		state.discardCount[num] = rand() % MAX_DECK; //pick the random discard number
+		state.handCount[num] = rand() % MAX_HAND; // pick the random handCount number
 
-		handCount = state.handCount[num];
-		deckCount = state.deckCount[num];
+		handCount = state.handCount[num]; //get the varibles
+		deckCount = state.deckCount[num]; //get the varibles
 
-
+		//some chance to make the empty
 		if (randSeed % 3 == 0) {
 
 			state.deckCount[num] = 0;
 		}
+		//random the card 
 
 		for (z = 0; z < state.deckCount[num]; z++){
             state.deck[num][z] = rand() % treasure_map;
@@ -60,6 +66,7 @@ int main(){
 		for (z = 0; z < state.handCount[num]; z++){
             state.hand[num][z] = rand() % treasure_map;
         }
+        //run the adventurer
 
         cardEffect(adventurer, 0, 0, 0, &state,0,0);
         	handCount += 2;

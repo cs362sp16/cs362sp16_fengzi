@@ -21,7 +21,7 @@ void my_assert(int a, int b, char *c)
 	}
 }
 //before main, I just set up everything, and initial all the varibles
-int main(){
+int main(int argc, char* argv[]){
 	int x[10] = {village, gardens, embargo, sea_hag, tribute, smithy,
 		adventurer, minion, mine, cutpurse, 
      };
@@ -29,6 +29,12 @@ int main(){
 
 	struct gameState state;
 	srand(time(NULL));
+
+	srand(time(NULL));
+		if(argv[1]!=NULL)
+		randSeed = atoi(argv[1]);
+	else
+		randSeed = rand()%10 + 1;
 
 	printf("*********** village test **********\n");
 
