@@ -66,10 +66,6 @@ testall:
 	./cardtest3 >> unittestresult.out
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
-output:
-	./testdominion 42 &> testdominion.out
-	gcov -f -b dominion.c &> testdominion.out
-	cat dominion.c.gcov >> testdominion.out
 
 randomtestout:
 	./randomtestadventurer &> randomtestadventurer.out

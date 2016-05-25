@@ -1,0 +1,12 @@
+CS 362
+assignemnt 4
+Zixuan Feng
+
+In this week, we are going to test different classmates' dominion's. And I test the ZhiJiang's
+I got 61.03% and Mine is 57.37%. I set up the money, and if the money is great than 8, it will biu the provience, so, that is the reason why my cover is not 70%. If I fixed, it will up to 80%.
+
+When i first try to use Zhi Jiang's dominion.c , I have a lot wraning, I tried to fix it, but I found over 1 hour, I cannot find problem, so i just continut to test. But at first, when i type GCOV, it did not give the answer, until I make clean. And then I got 49% in 10 times, but when I changed the time unitl 20 it is up to around 62%. But when I test few times, it will eith go up to 65%, or low to 50%. But I have servel time covered 60%+.
+
+I do not think thsi is a great idea, if we run at same time, it will run up various different data, and the different data will give us different result, even by some chance, it will come up with some bugs, but we still cannot know what is wrong, because too many random data, we ccannt tell it. This is not a reasonable and idea case. 
+
+I test a lot for mine and my friends code, it always come up with 50% - 70%, I think the reason is because my test dominion file set up the money, if the money satisfic some resason, i ask them to buy something. If I set it as random, I will get higher coverage.
