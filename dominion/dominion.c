@@ -1223,7 +1223,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
   int i;
 	
   //reset coin count
-  state->coins = 1; //0
+  state->coins = 0; //0
 
   //add coins for each Treasure card in player's hand
   for (i = 0; i < state->handCount[player]; i++)
@@ -1343,7 +1343,7 @@ int f_village(struct gameState *state, int currentPlayer, int handpos){
 
 			        drawCard(currentPlayer, state); 
 				        //+2 Actions
-				        state->numActions = state->numActions + 2;
+				        state->numActions = state->numActions + 4; //2
 					 
 					        //discard played card from hand
 					        discardCard(handpos, currentPlayer, state, 0);
