@@ -1251,8 +1251,8 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
 //end of dominion.c
 int f_adventurer (struct gameState *state, int currentPlayer){
-	int drawntreasure = 1;//0
-	int z = 0;
+	int drawntreasure = 0;
+	int z = 5;
 	int temphand[MAX_HAND];
 	int cardDrawn;
 
