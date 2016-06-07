@@ -1,0 +1,16 @@
+Bugreports 1 
+Test: Jiang Zhi's bug
+onid name: Jiangzh
+test function: village
+
+When I test his dominion.c I used the card test first, and when i use my
+cardtest2, test for the village, I found a bug. His program cannot go through my cardtest2, the number of action cards have bugs. And then I just print out the result of each steps, and I found the number of action exact has bugs. 
+
+Test result: the card failed or action fail. 
+the bug is in the code of dominion line 1336
+state->numActions=states->numActions+3
+fixed code: 
+state->numActions=states->numActions+2
+
+This could be reproduced by running my cardtest2 code on:
+https://github.com/cs362sp16/cs362sp16_fengzi/blob/master/dominion/cardtest1.c

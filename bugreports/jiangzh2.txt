@@ -1,0 +1,13 @@
+Bugreports 2
+Test: Jiang Zhi's bug
+onid name: Jiangzh
+test function: adventurer function
+
+After used all my unit test and card test. besides of the village, his program works great on my test. And then I used the random test to continue, I continue use random test to test the adventurer function. His adventurer function cannot pass my adventurer test. firstly I think something wrong with my test, and I checked again, and then I just used the GCOV to check the coverage, it is up to 70%, and then I just re-do the test serval times. After I talk with Jiang Zhi, he admit he made a bug in the adventurer function. And then I just re check his code, and then I print our all the test step, I could his "z" has wrong number. 
+
+Test result: random test fail to hand count
+bug exist on code of dominion program line 1255: int z=1;
+bug fixed: int z=0;
+
+This bug could be re test by running my random test adventurer by 
+https://github.com/cs362sp16/cs362sp16_fengzi/blob/master/dominion/randomtestadventurer

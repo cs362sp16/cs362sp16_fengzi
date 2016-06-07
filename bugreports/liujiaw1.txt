@@ -1,0 +1,14 @@
+bugreports 3
+Test: Jiawei Liu's bug
+onid name: Liujiaw
+test function: smithy
+
+When I used my card test as a first way to test his program, his program did not pass my first cardtest 1, it is for the smithy function. And then I just print out all the steps of my test to see the bugs of place. After few times test and read the result, I think he has bug on the number of cards. 
+
+test fail print: cards number wrong
+bug exist: dominion.c line 662, 
+for (i=1;i<3;i++)
+bug fixed:
+for (i=0;i<3;i++)
+This could be reproduced by running my cardtest1:
+https://github.com/cs362sp16/cs362sp16_fengzi/blob/master/dominion/cardtest1.c
