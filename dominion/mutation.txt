@@ -1,0 +1,39 @@
+CS 391
+Zixuan Feng
+Mutation Testing
+
+In the last of this class, our professor asked us to know about the mutation test and do a muatition for our own code. At first, I did a lot research about mutation, and try to know what is the mutation test. 
+
+What is mutation:
+According to my research, mutation test is a way to change some small element in original program, and this change will cause some bugs, and use some specfic scenario to change some small element in a program. For example. after run the scenario it will change ">" to "<", and then, program is still working, but it will have some bugs. The purpose of the mutaion is going to help programer fina an effective way to test different programs. Up to now, even we have learned a lot ways to test programs, but we still need to find a way to decide when to use and where to use. 
+
+Do a muatation for my own program
+
+In this time, I just use mutation to test my own code, firstly, I download a python scenario to start to test my code. But at first, when i know it will mutate some "new" program. As the first try, I just want to see what is a mutation, so I just cut my dominion.c and I remove the smithy part out of the dominion.c. The reason why i chose the smithy, because i have two test could test te smithy, one is my card 1, and another is my randomtest 2. So I could use all my source to test and know what is the muatation test. I just remove my smithy fucntion which I created in the assignment 1, so it is like this
+	int i;
+    
+	for(i=0; i<3; i++)
+        drawCard(currentPlayer, state);
+
+    discardCard(handPos, currentPlayer, state, 0);
+    
+	return 0;
+
+And made this into a C file. and then use the python scenario to create a mutate C file. And I just let it muates to three files by 
+"Usage: python mutate.py <file-to-mutate.c> [output-mutant-file-name.c]"
+
+they are all different, it has a comment
+
+/* XXX: original code was  
+
+to remind me where it mutated. 
+
+Because I used a small function to know what is mutation, so everything is very clear for me. 
+
+And then I just put the mutated smithy function back to dominion.c, and then I use my card test to test it. Fortunatly, my test checked out the bugs and which illstruate this mutation is a effective way. 
+
+Think aloud and work more:
+But, as a programmer, in this test, i know the reason why i use the smithy, but if this happen in a real time, I need to just use the scenario to mutated the whole program. What is more, to prove it, i also need to use the scenario to mutated a lot files to test. So i just use the same way to mutated 100 mutated dominion.c, and then I spent about 2 hours to test some of them randomly. But in this time, because this is close to the real life, and then I just use all my test to test some of them randomly. In this time I found some of them are even cannot executed, and some of them I could find bugs, and some of them I cannot found bugs. 
+
+Conclusion:
+All in all, in the real programming life, we need to use it for the whole game, but even we have already wrote a lot tests for this game, but after mutation test, I found that is still not sufficiency, I think if I will write a program for real use, I need to wrote tests as much as possbile, and then use the mutation test, and then test the program as much as possible. 

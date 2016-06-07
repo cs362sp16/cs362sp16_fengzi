@@ -1,0 +1,67 @@
+debugging
+CS 352
+Zixuan Feng
+
+This file I am going to write a report about how I use GDB to test and find out my own bugs. We know the GDB is a very effective way to test and find out bugs. 
+As for the GDB process, I know first we need to set a target file, and run it and then using the code GDB to run the GDB file, and then we could just set up the file position, and we use the break command to set up the break point. And we could use step to print out each step statment, when we see some werid or strange statement, we could just print value to see if the bug exist in there. 
+
+
+According to previous assignment I know there are three bugs in my dominion.c file, which are:
+adventurer effect function,
+smithy effect function, 
+and village effect function. 
+
+And I have three tests for these three effects:
+1. I use the card test 1 to test the smithy function.
+2. I use the random test adventurer to test the adventurer effect function,
+3. I use the card test 2 to test the village function.
+
+GDB Mission 1: 
+
+I use the card test 1 to test the smithy function. So, firstly, I just open the GDP and run it, and then I just type the file address to open the smithy function. And then debug begin. So, and I just set up break point set up a break point at line 30 and print out each step. Because the line 30 just illstruate that card begin to affect. and then I just use "step" command to print out each step to see the statement. And As for this function is going to add three cards, so I just use "print value" to print the card number. And when I just print the before and after, the number of cards was 4. So, I just realized that the card number was wrong. And then I just going to read back my dominion.c to check the card number, and I found for (i = 0; i < 4; i++), the i should be equal to 3.
+
+GDB Mission 2:
+I use my randomtestadventurer.c to test the adventurer effect function. This is a bigger function compared with last function, so the important is going to find the break point. But I could still use the step command to print out the statement, and I just set up the break point in the line 59, and then use the step to print out the statement. In this card effect, the card number is very important, so I just use print value to print out the each steps of card number, and I found the card number is wrong, and I just go back to my dominion.c and O found I set up the z = 5, (int f_adventurer (struct gameState *state, int currentPlayer){
+int drawntreasure = 0;
+int z = 5;)
+	and it should be z=0. 
+
+GDB Mission 3:
+I use my card test 2 to test my village function effect. So same as privious two, I just start to use the GDB, and type the file address, and breal up in some point. In this code I broke up in line 33, because this is where the game start, and I know this card is going to add actions, so after print out the statement, I just need to use print value to print out the number of actions and then I just find the number of actions was wrong, so I just looked back to my dominion.c and I just found ther is a bug in the 				        state->numActions = state->numActions + 4;
+andthe original thing should be 2. because the effect is going to add two actions.
+
+Related to the Agan's principles:
+Rule #1:
+ Understand the System:
+ All in these three Missions, the number one rule is very important. Because we need to make sure the card effect. We have to read the code and know the game, and we could do the debug. For example, as for the smithy, the card effect is going to add three cards, but the bug give us three cards. So after read the code and principle, we know that this function have a bug.
+
+ Rule #2:
+ Make it Fail.
+ As these three card effect, we should also do the whole game test to test the card effect, we cannot ignore any of possible could have bugs in the program. We might need to not just focus on the these three test, we need to run the whole game to see if any other bugs. 
+
+ RUle #3:
+ As for this rule, we need to not just focus on the card effect, for example, even we know there is a bug in the smithy, but we cannot just image the card number probably wrong. If is not this game, if the bug happens in other game, we need to test whole game to see the reason of bugs. We cannot just image or think, sometimes that is not reliable.
+
+ Rule #4:
+ DIvide and Conquer:
+ In the rule, I think i did it pretty good in my test. Because when i know there are serveal bugs in the card effect, so i just focus on the card effect, and then test each of the card effect to see the bug. for specficly, when I know there is a bug in the smithy, and my print result is said card number wrong, so I just focus on the card number and then I just step by step to print our the card number to find the bug.
+
+ Rule #5:
+ Change one thing at a time
+ I know where I should break, this will help me save a lot time to debug, and if I just print out the statement step by step, know the break point is very important.
+
+ Rule #6
+ Keep an Audit Trail
+ When I use the debuger, I know it is very important to do it not just image or assume something. 
+
+ Rule #7
+ Check and Plug
+ After I use the debuger find out the problem, I know where the problem occured, and then I just fix it in my own code, and do it again to make sure I was right. I do not reley on the debugers and my test. 
+
+ Rule #8:
+ Get a Fresh View
+ When I use my debuger found out the problems, I just go to github to check if some one is also checking my bug and I just compare with their results to make sure. 
+
+ Rule #9:
+ Rule #9:  “If You Didn’t Fix It, ItAin’t Fixed”
+I just fix the bug when I found the bug, and then I test it again to make sure. 
